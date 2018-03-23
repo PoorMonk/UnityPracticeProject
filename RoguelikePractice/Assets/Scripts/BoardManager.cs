@@ -34,7 +34,7 @@ public class BoardManager : MonoBehaviour {
     public int row = 8;
     public int col = 8;
 
-    private GameObject Board;
+    //private GameObject Board;
 
     void InitialiseList()
     {
