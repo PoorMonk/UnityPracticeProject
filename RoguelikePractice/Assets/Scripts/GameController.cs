@@ -49,8 +49,9 @@ public class GameController : MonoBehaviour {
     {
         Debug.Log("OnSceneLoaded: " + scene.name);
         //Debug.Log(mode);
-        level++;
+        
         InitGame();
+        level++;
     }
 
     private void OnDisable()

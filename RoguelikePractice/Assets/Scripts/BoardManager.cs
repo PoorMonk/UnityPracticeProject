@@ -66,7 +66,7 @@ public class BoardManager : MonoBehaviour {
 
     Vector3 RandomPosition()
     {
-        int randomIndex = Random.Range(0, gridPositions.Count);
+        int randomIndex = Random.Range(0, gridPositions.Count - 1); //最后一个格子用来放置过关图标
         Vector3 randomPosition = gridPositions[randomIndex];
         gridPositions.RemoveAt(randomIndex); //把随机的格子移除，保证下次随机位置不会重复
         return randomPosition;
