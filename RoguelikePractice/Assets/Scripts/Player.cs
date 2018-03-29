@@ -93,7 +93,7 @@ public class Player : MoveObject {
         if(collision.tag == "Exit")
         {
             Debug.Log("EnterExit");
-            collision.gameObject.SetActive(false);
+            //collision.gameObject.SetActive(false);
             Invoke("Restart", restartLevelDelay);
             enabled = false;
         }
