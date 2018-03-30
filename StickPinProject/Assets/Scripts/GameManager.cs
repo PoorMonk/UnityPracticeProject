@@ -90,20 +90,25 @@ public class GameManager : MonoBehaviour {
         if (IsGameOver) return;
 		if (Input.GetMouseButtonDown(0))
         {
-            if (spawnPin.IsReachStartPoint)
+            if (spawnPin.IsReachStartPoint && !spawnPin.IsGotoCircle)
             {
                 spawnPin.fly();
-                SpawnPin();
-                m_iCount++;
                 
-                m_scoreText.text = m_iCount.ToString();
-                if (m_targetCount <= m_iCount)
-                {
-                    GotoNextLevel();
-                }
             }            
         }
 	}
+
+    public void ReachCircle()
+    {
+        SpawnPin();
+        m_iCount++;
+
+        m_scoreText.text = m_iCount.ToString();
+        if (m_targetCount <= m_iCount)
+        {
+            GotoNextLevel();
+        }
+    }
 
     private void GotoNextLevel()
     {
@@ -118,6 +123,7 @@ public class GameManager : MonoBehaviour {
             m_OverText.text = "OVER";
         IsGameOver = true;
         m_CircleRotate.enabled = false;
+        spawnPin.Stopfly();
         StartCoroutine(GameOverAnimation(col));
     }
 

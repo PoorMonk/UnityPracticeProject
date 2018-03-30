@@ -40,7 +40,9 @@ public class Pin : MonoBehaviour {
             {             
                 transform.position = targetPosition;
                 transform.SetParent(DiskPoint);
+                GameManager.instance.ReachCircle();
                 IsGotoCircle = false;
+                Debug.Log("Reach");
             }
         }
 	}
@@ -48,6 +50,11 @@ public class Pin : MonoBehaviour {
     public void fly()
     {
         IsGotoCircle = true;
-        IsReachStartPoint = true;
+        //IsReachStartPoint = true;
+    }
+
+    public void Stopfly()
+    {
+        IsGotoCircle = false;
     }
 }

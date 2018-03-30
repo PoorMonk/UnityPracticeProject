@@ -10,7 +10,7 @@ public class PinHead : MonoBehaviour {
         {
             GameManager.instance.GameOver(Color.red);
             GameManager.instance.InitResource();
-            
+            Debug.Log("Over");
         }
     }
 }
